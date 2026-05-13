@@ -23,3 +23,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  job_2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run ls -la
+        run: ls -la
+  
+      - name: Run pwd
+        run: pwd
