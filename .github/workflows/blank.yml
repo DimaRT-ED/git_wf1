@@ -1,0 +1,25 @@
+name: My First Step in GitActions
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run ls -la
+        run: ls -la
+  
+      - name: Run pwd
+        run: pwd
+        
+      - uses: actions/checkout@v4
+
+      - name: Run ls -la after uses
+        run: ls -la
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
