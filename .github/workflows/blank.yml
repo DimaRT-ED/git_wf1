@@ -1,4 +1,7 @@
 name: My First Step in GitActions
+env:
+  APP_NAME: MyApp
+  PACK_NAME: App_version-${{ github.repository }}
 on:
   push:
     branches: [ "master" ]
@@ -24,11 +27,9 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-  job_2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run ls -la
-        run: ls -la
-  
-      - name: Run pwd
-        run: pwd
+      - name: Run a multi-line script
+        run: |
+          echo $APP_NAME
+          echo $PACK_NAME
+          echo ${{github.sha}}
+          echo test, and deploy your project.
